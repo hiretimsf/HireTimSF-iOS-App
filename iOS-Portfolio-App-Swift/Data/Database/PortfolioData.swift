@@ -1,7 +1,8 @@
 import Foundation
 
 enum PortfolioData {
-    static let fallbackImageURL = URL(string: "https://hiretimsf.com/images/logo.png")!
+    static let websiteURL = url("https://hiretimsf.com")
+    static let fallbackImageURL = url("https://hiretimsf.com/images/logo.png")
 
     static let profile = Profile(
         greeting: "Nice to meet you",
@@ -9,9 +10,9 @@ enum PortfolioData {
         title: "Design Engineer",
         email: "hiretimsf@gmail.com",
         socials: [
-            SocialLink(id: "x", name: "X (Twitter)", url: URL(string: "https://x.com/hiretimsf")!, systemImage: "bubble.left.and.bubble.right"),
-            SocialLink(id: "github", name: "GitHub", url: URL(string: "https://github.com/hiretimsf")!, systemImage: "chevron.left.forwardslash.chevron.right"),
-            SocialLink(id: "linkedin", name: "LinkedIn", url: URL(string: "https://www.linkedin.com/in/hiretimsf/")!, systemImage: "person.crop.square")
+            SocialLink(id: "x", name: "X (Twitter)", url: url("https://x.com/hiretimsf"), systemImage: "bubble.left.and.bubble.right"),
+            SocialLink(id: "github", name: "GitHub", url: url("https://github.com/hiretimsf"), systemImage: "chevron.left.forwardslash.chevron.right"),
+            SocialLink(id: "linkedin", name: "LinkedIn", url: url("https://www.linkedin.com/in/hiretimsf/"), systemImage: "person.crop.square")
         ]
     )
 
@@ -56,9 +57,9 @@ enum PortfolioData {
     ]
 
     static let aboutPhotos = [
-        AboutPhoto(url: URL(string: "https://hiretimsf.com/images/about/about_me_01.webp")!, alt: "Tim's wedding photo showing a special moment with his wife"),
-        AboutPhoto(url: URL(string: "https://hiretimsf.com/images/about/about_me_02.webp")!, alt: "Tim with his family in a warm family moment"),
-        AboutPhoto(url: URL(string: "https://hiretimsf.com/images/about/about_me_03.webp")!, alt: "Tim running, showing his active lifestyle and fitness")
+        AboutPhoto(url: url("https://hiretimsf.com/images/about/about_me_01.webp"), alt: "Tim's wedding photo showing a special moment with his wife"),
+        AboutPhoto(url: url("https://hiretimsf.com/images/about/about_me_02.webp"), alt: "Tim with his family in a warm family moment"),
+        AboutPhoto(url: url("https://hiretimsf.com/images/about/about_me_03.webp"), alt: "Tim running, showing his active lifestyle and fitness")
     ]
 
     static let projects = [
@@ -67,7 +68,7 @@ enum PortfolioData {
             title: "Portfolio App",
             subtitle: "Portfolio App 2.0",
             header: "Android Apps",
-            coverImage: URL(string: "https://tumur.me/img/portfolio_screen.jpg")!,
+            coverImage: url("https://tumur.me/img/portfolio_screen.jpg"),
             logo: URL(string: "https://tumur.me/img/portfolio-app-icon.png"),
             imageDescription: "User profile screen",
             info: "Kotlin, Jetpack, MVVM",
@@ -75,8 +76,8 @@ enum PortfolioData {
             start: "Nov 2018",
             end: "Aug 2019",
             links: [
-                ProjectLink(title: "GitHub", url: URL(string: "https://github.com/tumurb/Portfolio-Verson-2/")!, systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Play Store", url: URL(string: "https://play.google.com/store/apps/details?id=hiretimsf.com.app")!, systemImage: "arrow.up.forward.app")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Portfolio-Verson-2/"), systemImage: "chevron.left.forwardslash.chevron.right"),
+                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/details?id=hiretimsf.com.app"), systemImage: "arrow.up.forward.app")
             ]
         ),
         Project(
@@ -84,7 +85,7 @@ enum PortfolioData {
             title: "Ponda App",
             subtitle: "Read Key Ideas",
             header: "Android Apps",
-            coverImage: URL(string: "https://tumur.me/img/ponda_screen.jpg")!,
+            coverImage: url("https://tumur.me/img/ponda_screen.jpg"),
             logo: URL(string: "https://tumur.me/img/ponda-app-icon.png"),
             imageDescription: "Home screen",
             info: "Kotlin, Jetpack, MVVM",
@@ -92,8 +93,8 @@ enum PortfolioData {
             start: "Nov 2018",
             end: "Aug 2019",
             links: [
-                ProjectLink(title: "GitHub", url: URL(string: "https://github.com/tumurb/Mongolian-Sign-Language-Dictionary")!, systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Play Store", url: URL(string: "https://play.google.com/store/apps/dev?id=4872099625526337244")!, systemImage: "arrow.up.forward.app")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Mongolian-Sign-Language-Dictionary"), systemImage: "chevron.left.forwardslash.chevron.right"),
+                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/dev?id=4872099625526337244"), systemImage: "arrow.up.forward.app")
             ]
         ),
         Project(
@@ -101,7 +102,7 @@ enum PortfolioData {
             title: "Portfolio App 1.0",
             subtitle: "Portfolio App 1.0",
             header: "Android Apps",
-            coverImage: URL(string: "https://tumur.me/img/resume_screen.jpg")!,
+            coverImage: url("https://tumur.me/img/resume_screen.jpg"),
             logo: URL(string: "https://tumur.me/img/resume-icon.png"),
             imageDescription: "User profile screen",
             info: "Java, Android, MVC",
@@ -109,8 +110,8 @@ enum PortfolioData {
             start: "May 2018",
             end: "Feb 2019",
             links: [
-                ProjectLink(title: "GitHub", url: URL(string: "https://github.com/tumurb/Personal-Resume-Android")!, systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Download", url: URL(string: "https://drive.google.com/file/d/1k42IA8ypeBl-idalp9RRwxPzz3UugQCw/view")!, systemImage: "square.and.arrow.down")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Personal-Resume-Android"), systemImage: "chevron.left.forwardslash.chevron.right"),
+                ProjectLink(title: "Download", url: url("https://drive.google.com/file/d/1k42IA8ypeBl-idalp9RRwxPzz3UugQCw/view"), systemImage: "square.and.arrow.down")
             ]
         )
     ]
@@ -123,7 +124,7 @@ enum PortfolioData {
             category: "Android",
             readTime: "4 min read",
             excerpt: "Placeholder notes for a future post about replacing legacy screens with focused Compose UI.",
-            coverImageUrl: URL(string: "https://hiretimsf.com/images/blog/android-compose-portfolio-app/cover.jpg")!,
+            coverImageUrl: url("https://hiretimsf.com/images/blog/android-compose-portfolio-app/cover.jpg"),
             imageAlt: "Blog cover placeholder",
             url: nil,
             sections: [],
@@ -140,7 +141,14 @@ enum PortfolioData {
         AppInfoItem(title: "Last updated", text: "June 23, 2019")
     ]
 
-    static let sourceCodeURL = URL(string: "https://github.com/hiretimsf")!
-    static let privacyURL = URL(string: "https://hiretimsf.com/privacy")!
-    static let rateURL = URL(string: "https://apps.apple.com/")!
+    static let sourceCodeURL = url("https://github.com/hiretimsf")
+    static let privacyURL = url("https://hiretimsf.com/privacy")
+    static let rateURL = url("https://apps.apple.com/")
+
+    private static func url(_ string: String) -> URL {
+        guard let url = URL(string: string) else {
+            preconditionFailure("Invalid bundled URL: \(string)")
+        }
+        return url
+    }
 }

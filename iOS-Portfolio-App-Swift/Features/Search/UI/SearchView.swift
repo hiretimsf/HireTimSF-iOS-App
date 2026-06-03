@@ -2,12 +2,22 @@ import SwiftUI
 
 struct SearchView: View {
     @Environment(\.dismiss) private var dismiss
-    @Environment(PortfolioViewModel.self) private var portfolio
-    @State private var viewModel = SearchViewModel()
+    let portfolioViewModel: PortfolioViewModel
+
+    @State private var viewModel: SearchViewModel
+
+    @MainActor
+    init(portfolioViewModel: PortfolioViewModel) {
+        self.portfolioViewModel = portfolioViewModel
+        _viewModel = State(initialValue: SearchViewModel())
+    }
 
     var body: some View {
         @Bindable var viewModel = viewModel
-        let results = viewModel.results(projects: portfolio.projects, blogPosts: portfolio.blogPosts)
+        let results = viewModel.results(
+            projects: portfolioViewModel.projects,
+            blogPosts: portfolioViewModel.blogPosts
+        )
 
         List(results) { result in
             VStack(alignment: .leading, spacing: 4) {

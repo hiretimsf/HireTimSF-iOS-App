@@ -35,8 +35,10 @@ struct SettingsView: View {
             }
 
             Section("Designed and Developed by") {
-                Link(destination: URL(string: "https://x.com/hiretimsf")!) {
-                    SettingsRow(icon: "person.crop.circle", title: "@hiretimsf", subtitle: "You can find me on X")
+                if let xProfile = PortfolioData.profile.socials.first(where: { $0.id == "x" }) {
+                    Link(destination: xProfile.url) {
+                        SettingsRow(icon: "person.crop.circle", title: "@hiretimsf", subtitle: "You can find me on X")
+                    }
                 }
             }
 

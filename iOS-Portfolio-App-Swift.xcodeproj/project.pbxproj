@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0000000000000000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000015 /* Assets.xcassets */; };
 		2A0000000000000000000006 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000018 /* profile.png */; };
 		2A0000000000000000000007 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000019 /* profile@2x.png */; };
 		2A0000000000000000000008 /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A000000000000000000001A /* profile@3x.png */; };
@@ -16,19 +15,21 @@
 		2A000000000000000000000B /* icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A000000000000000000001D /* icon-76@2x.png */; };
 		2A000000000000000000000C /* icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A000000000000000000001E /* icon-83.5@2x.png */; };
 		2A000000000000000000000D /* icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A000000000000000000001F /* icon-1024.png */; };
+		2A000000000000000000002C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000015 /* Assets.xcassets */; };
 		2A000000000000000000000F /* onboarding_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000022 /* onboarding_01.png */; };
 		2A000000000000000000002A /* onboarding_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000023 /* onboarding_02.png */; };
 		2A000000000000000000002B /* onboarding_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000000000000000000024 /* onboarding_03.png */; };
 		2B0000000000000000000201 /* PortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000101 /* PortfolioApp.swift */; };
-		2B0000000000000000000202 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000102 /* AppTheme.swift */; };
-		2B0000000000000000000203 /* PortfolioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000103 /* PortfolioModels.swift */; };
-		2B0000000000000000000204 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000104 /* AppColors.swift */; };
-		2B0000000000000000000205 /* BundledImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000105 /* BundledImage.swift */; };
-		2B0000000000000000000206 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000106 /* FlowLayout.swift */; };
-		2B0000000000000000000207 /* HeaderPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000107 /* HeaderPattern.swift */; };
-		2B0000000000000000000208 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000108 /* Pill.swift */; };
-		2B0000000000000000000209 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000109 /* RemoteImageView.swift */; };
-		2B000000000000000000020A /* MailUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000010A /* MailUtilities.swift */; };
+		2B0000000000000000000232 /* AppSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000132 /* AppSplashView.swift */; };
+		2B0000000000000000000202 /* Models/AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000102 /* Models/AppTheme.swift */; };
+		2B0000000000000000000203 /* Models/PortfolioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000103 /* Models/PortfolioModels.swift */; };
+		2B0000000000000000000204 /* UI/Theme/AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000104 /* UI/Theme/AppColors.swift */; };
+		2B0000000000000000000205 /* UI/Components/BundledImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000105 /* UI/Components/BundledImage.swift */; };
+		2B0000000000000000000206 /* UI/Components/FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000106 /* UI/Components/FlowLayout.swift */; };
+		2B0000000000000000000207 /* UI/Components/HeaderPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000107 /* UI/Components/HeaderPattern.swift */; };
+		2B0000000000000000000208 /* UI/Components/Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000108 /* UI/Components/Pill.swift */; };
+		2B0000000000000000000209 /* UI/Components/RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000109 /* UI/Components/RemoteImageView.swift */; };
+		2B000000000000000000020A /* Utilities/MailUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000010A /* Utilities/MailUtilities.swift */; };
 		2B000000000000000000020B /* PortfolioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000010B /* PortfolioRepository.swift */; };
 		2B000000000000000000020C /* PortfolioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000010C /* PortfolioAPI.swift */; };
 		2B000000000000000000020D /* PortfolioData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000010D /* PortfolioData.swift */; };
@@ -48,7 +49,6 @@
 		2B000000000000000000021B /* AboutPhotoCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000011B /* AboutPhotoCarousel.swift */; };
 		2B000000000000000000021C /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000011C /* PortfolioViewModel.swift */; };
 		2B000000000000000000021D /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000011D /* PortfolioView.swift */; };
-		2B000000000000000000021E /* PortfolioHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000011E /* PortfolioHeaderView.swift */; };
 		2B000000000000000000021F /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000011F /* ProjectCardView.swift */; };
 		2B0000000000000000000220 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000120 /* ProjectDetailView.swift */; };
 		2B0000000000000000000221 /* BlogDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000121 /* BlogDetailViewModel.swift */; };
@@ -66,6 +66,8 @@
 		2B000000000000000000022D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000012D /* SettingsView.swift */; };
 		2B000000000000000000022E /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000012E /* SettingsRow.swift */; };
 		2B000000000000000000022F /* DataDeletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B000000000000000000012F /* DataDeletionView.swift */; };
+		2B0000000000000000000230 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000130 /* AppEnvironment.swift */; };
+		2B0000000000000000000231 /* PortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000131 /* PortfolioService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,52 +87,54 @@
 		2A0000000000000000000023 /* onboarding_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding_02.png; sourceTree = "<group>"; };
 		2A0000000000000000000024 /* onboarding_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding_03.png; sourceTree = "<group>"; };
 		2B0000000000000000000101 /* PortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioApp.swift; sourceTree = "<group>"; };
-		2B0000000000000000000102 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/AppTheme.swift; sourceTree = "<group>"; };
-		2B0000000000000000000103 /* PortfolioModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PortfolioModels.swift; sourceTree = "<group>"; };
-		2B0000000000000000000104 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Theme/AppColors.swift; sourceTree = "<group>"; };
-		2B0000000000000000000105 /* BundledImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/BundledImage.swift; sourceTree = "<group>"; };
-		2B0000000000000000000106 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/FlowLayout.swift; sourceTree = "<group>"; };
-		2B0000000000000000000107 /* HeaderPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/HeaderPattern.swift; sourceTree = "<group>"; };
-		2B0000000000000000000108 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/Pill.swift; sourceTree = "<group>"; };
-		2B0000000000000000000109 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/RemoteImageView.swift; sourceTree = "<group>"; };
-		2B000000000000000000010A /* MailUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities/MailUtilities.swift; sourceTree = "<group>"; };
-		2B000000000000000000010B /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories/PortfolioRepository.swift; sourceTree = "<group>"; };
-		2B000000000000000000010C /* PortfolioAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/PortfolioAPI.swift; sourceTree = "<group>"; };
-		2B000000000000000000010D /* PortfolioData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local/PortfolioData.swift; sourceTree = "<group>"; };
-		2B000000000000000000010E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding/ViewModels/OnboardingViewModel.swift; sourceTree = "<group>"; };
-		2B000000000000000000010F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding/UI/OnboardingView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000110 /* OnboardingPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding/UI/OnboardingPageIndicator.swift; sourceTree = "<group>"; };
-		2B0000000000000000000111 /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding/UI/WelcomePageView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000112 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/Models/AppTab.swift; sourceTree = "<group>"; };
-		2B0000000000000000000113 /* RootTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/ViewModels/RootTabViewModel.swift; sourceTree = "<group>"; };
-		2B0000000000000000000114 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/UI/RootTabView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000115 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/UI/AppNavigation.swift; sourceTree = "<group>"; };
-		2B0000000000000000000116 /* DrawerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/UI/DrawerRow.swift; sourceTree = "<group>"; };
-		2B0000000000000000000117 /* NavigationDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell/UI/NavigationDrawer.swift; sourceTree = "<group>"; };
-		2B0000000000000000000118 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile/UI/ProfileView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000119 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile/UI/ProfileHeaderView.swift; sourceTree = "<group>"; };
-		2B000000000000000000011A /* AboutSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile/UI/AboutSectionView.swift; sourceTree = "<group>"; };
-		2B000000000000000000011B /* AboutPhotoCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile/UI/AboutPhotoCarousel.swift; sourceTree = "<group>"; };
-		2B000000000000000000011C /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio/ViewModels/PortfolioViewModel.swift; sourceTree = "<group>"; };
-		2B000000000000000000011D /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio/UI/PortfolioView.swift; sourceTree = "<group>"; };
-		2B000000000000000000011E /* PortfolioHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio/UI/PortfolioHeaderView.swift; sourceTree = "<group>"; };
-		2B000000000000000000011F /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio/UI/ProjectCardView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000120 /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio/UI/ProjectDetailView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000121 /* BlogDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/ViewModels/BlogDetailViewModel.swift; sourceTree = "<group>"; };
-		2B0000000000000000000122 /* BlogContentBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/Models/BlogContentBlock.swift; sourceTree = "<group>"; };
-		2B0000000000000000000123 /* BlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/UI/BlogView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000124 /* BlogPostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/UI/BlogPostCardView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000125 /* BlogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/UI/BlogDetailView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000126 /* BlogContentBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog/UI/BlogContentBlocks.swift; sourceTree = "<group>"; };
-		2B0000000000000000000127 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact/UI/ContactView.swift; sourceTree = "<group>"; };
-		2B0000000000000000000128 /* ContactSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact/UI/ContactSection.swift; sourceTree = "<group>"; };
-		2B0000000000000000000129 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact/UI/ContactRow.swift; sourceTree = "<group>"; };
-		2B000000000000000000012A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search/Models/SearchResult.swift; sourceTree = "<group>"; };
-		2B000000000000000000012B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search/ViewModels/SearchViewModel.swift; sourceTree = "<group>"; };
-		2B000000000000000000012C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search/UI/SearchView.swift; sourceTree = "<group>"; };
-		2B000000000000000000012D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/UI/SettingsView.swift; sourceTree = "<group>"; };
-		2B000000000000000000012E /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/UI/SettingsRow.swift; sourceTree = "<group>"; };
-		2B000000000000000000012F /* DataDeletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/UI/DataDeletionView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000132 /* AppSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSplashView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000102 /* Models/AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/AppTheme.swift; sourceTree = "<group>"; };
+		2B0000000000000000000103 /* Models/PortfolioModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PortfolioModels.swift; sourceTree = "<group>"; };
+		2B0000000000000000000104 /* UI/Theme/AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Theme/AppColors.swift; sourceTree = "<group>"; };
+		2B0000000000000000000105 /* UI/Components/BundledImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/BundledImage.swift; sourceTree = "<group>"; };
+		2B0000000000000000000106 /* UI/Components/FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/FlowLayout.swift; sourceTree = "<group>"; };
+		2B0000000000000000000107 /* UI/Components/HeaderPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/HeaderPattern.swift; sourceTree = "<group>"; };
+		2B0000000000000000000108 /* UI/Components/Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/Pill.swift; sourceTree = "<group>"; };
+		2B0000000000000000000109 /* UI/Components/RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/Components/RemoteImageView.swift; sourceTree = "<group>"; };
+		2B000000000000000000010A /* Utilities/MailUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities/MailUtilities.swift; sourceTree = "<group>"; };
+		2B000000000000000000010B /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepository.swift; sourceTree = "<group>"; };
+		2B000000000000000000010C /* PortfolioAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioAPI.swift; sourceTree = "<group>"; };
+		2B000000000000000000010D /* PortfolioData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioData.swift; sourceTree = "<group>"; };
+		2B000000000000000000010E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		2B000000000000000000010F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000110 /* OnboardingPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageIndicator.swift; sourceTree = "<group>"; };
+		2B0000000000000000000111 /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000112 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		2B0000000000000000000113 /* RootTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabViewModel.swift; sourceTree = "<group>"; };
+		2B0000000000000000000114 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000115 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
+		2B0000000000000000000116 /* DrawerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerRow.swift; sourceTree = "<group>"; };
+		2B0000000000000000000117 /* NavigationDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawer.swift; sourceTree = "<group>"; };
+		2B0000000000000000000118 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000119 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		2B000000000000000000011A /* AboutSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSectionView.swift; sourceTree = "<group>"; };
+		2B000000000000000000011B /* AboutPhotoCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPhotoCarousel.swift; sourceTree = "<group>"; };
+		2B000000000000000000011C /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		2B000000000000000000011D /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		2B000000000000000000011F /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000120 /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000121 /* BlogDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewModel.swift; sourceTree = "<group>"; };
+		2B0000000000000000000122 /* BlogContentBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogContentBlock.swift; sourceTree = "<group>"; };
+		2B0000000000000000000123 /* BlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000124 /* BlogPostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostCardView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000125 /* BlogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000126 /* BlogContentBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogContentBlocks.swift; sourceTree = "<group>"; };
+		2B0000000000000000000127 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000128 /* ContactSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSection.swift; sourceTree = "<group>"; };
+		2B0000000000000000000129 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		2B000000000000000000012A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		2B000000000000000000012B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2B000000000000000000012C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2B000000000000000000012D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2B000000000000000000012E /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		2B000000000000000000012F /* DataDeletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDeletionView.swift; sourceTree = "<group>"; };
+		2B0000000000000000000130 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		2B0000000000000000000131 /* PortfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +181,20 @@
 			path = "iOS-Portfolio-App-Swift";
 			sourceTree = "<group>";
 		};
+		2A0000000000000000000032 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000000000000000000010 /* iOS-Portfolio-App-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2B0000000000000000000301 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				2B0000000000000000000101 /* PortfolioApp.swift */,
+				2B0000000000000000000130 /* AppEnvironment.swift */,
+				2B0000000000000000000132 /* AppSplashView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -188,15 +202,15 @@
 		2B0000000000000000000302 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2B0000000000000000000102 /* AppTheme.swift */,
-				2B0000000000000000000103 /* PortfolioModels.swift */,
-				2B0000000000000000000104 /* AppColors.swift */,
-				2B0000000000000000000105 /* BundledImage.swift */,
-				2B0000000000000000000106 /* FlowLayout.swift */,
-				2B0000000000000000000107 /* HeaderPattern.swift */,
-				2B0000000000000000000108 /* Pill.swift */,
-				2B0000000000000000000109 /* RemoteImageView.swift */,
-				2B000000000000000000010A /* MailUtilities.swift */,
+				2B0000000000000000000102 /* Models/AppTheme.swift */,
+				2B0000000000000000000103 /* Models/PortfolioModels.swift */,
+				2B0000000000000000000104 /* UI/Theme/AppColors.swift */,
+				2B0000000000000000000105 /* UI/Components/BundledImage.swift */,
+				2B0000000000000000000106 /* UI/Components/FlowLayout.swift */,
+				2B0000000000000000000107 /* UI/Components/HeaderPattern.swift */,
+				2B0000000000000000000108 /* UI/Components/Pill.swift */,
+				2B0000000000000000000109 /* UI/Components/RemoteImageView.swift */,
+				2B000000000000000000010A /* Utilities/MailUtilities.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -204,9 +218,9 @@
 		2B0000000000000000000303 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2B000000000000000000010D /* PortfolioData.swift */,
-				2B000000000000000000010B /* PortfolioRepository.swift */,
-				2B000000000000000000010C /* PortfolioAPI.swift */,
+				2B0000000000000000000401 /* Database */,
+				2B0000000000000000000402 /* Repositories */,
+				2B0000000000000000000403 /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -214,50 +228,258 @@
 		2B0000000000000000000304 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				2B000000000000000000010E /* OnboardingViewModel.swift */,
-				2B000000000000000000010F /* OnboardingView.swift */,
-				2B0000000000000000000110 /* OnboardingPageIndicator.swift */,
-				2B0000000000000000000111 /* WelcomePageView.swift */,
-				2B0000000000000000000112 /* AppTab.swift */,
-				2B0000000000000000000113 /* RootTabViewModel.swift */,
-				2B0000000000000000000114 /* RootTabView.swift */,
-				2B0000000000000000000115 /* AppNavigation.swift */,
-				2B0000000000000000000116 /* DrawerRow.swift */,
-				2B0000000000000000000117 /* NavigationDrawer.swift */,
-				2B0000000000000000000118 /* ProfileView.swift */,
-				2B0000000000000000000119 /* ProfileHeaderView.swift */,
-				2B000000000000000000011A /* AboutSectionView.swift */,
-				2B000000000000000000011B /* AboutPhotoCarousel.swift */,
-				2B000000000000000000011C /* PortfolioViewModel.swift */,
-				2B000000000000000000011D /* PortfolioView.swift */,
-				2B000000000000000000011E /* PortfolioHeaderView.swift */,
-				2B000000000000000000011F /* ProjectCardView.swift */,
-				2B0000000000000000000120 /* ProjectDetailView.swift */,
-				2B0000000000000000000121 /* BlogDetailViewModel.swift */,
-				2B0000000000000000000122 /* BlogContentBlock.swift */,
-				2B0000000000000000000123 /* BlogView.swift */,
-				2B0000000000000000000124 /* BlogPostCardView.swift */,
-				2B0000000000000000000125 /* BlogDetailView.swift */,
-				2B0000000000000000000126 /* BlogContentBlocks.swift */,
-				2B0000000000000000000127 /* ContactView.swift */,
-				2B0000000000000000000128 /* ContactSection.swift */,
-				2B0000000000000000000129 /* ContactRow.swift */,
-				2B000000000000000000012A /* SearchResult.swift */,
-				2B000000000000000000012B /* SearchViewModel.swift */,
-				2B000000000000000000012C /* SearchView.swift */,
-				2B000000000000000000012D /* SettingsView.swift */,
-				2B000000000000000000012E /* SettingsRow.swift */,
-				2B000000000000000000012F /* DataDeletionView.swift */,
+				2B0000000000000000000501 /* Blog */,
+				2B0000000000000000000505 /* Contact */,
+				2B0000000000000000000509 /* Onboarding */,
+				2B000000000000000000050D /* Portfolio */,
+				2B0000000000000000000511 /* Profile */,
+				2B0000000000000000000515 /* Search */,
+				2B0000000000000000000519 /* Settings */,
+				2B000000000000000000051D /* Shell */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		2A0000000000000000000032 /* Products */ = {
+		2B0000000000000000000401 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				2A0000000000000000000010 /* iOS-Portfolio-App-Swift.app */,
+				2B000000000000000000010D /* PortfolioData.swift */,
 			);
-			name = Products;
+			path = Database;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000402 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000010B /* PortfolioRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000403 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000010C /* PortfolioAPI.swift */,
+				2B0000000000000000000131 /* PortfolioService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000501 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000502 /* Models */,
+				2B0000000000000000000503 /* UI */,
+				2B0000000000000000000504 /* ViewModels */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000122 /* BlogContentBlock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000503 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000123 /* BlogView.swift */,
+				2B0000000000000000000124 /* BlogPostCardView.swift */,
+				2B0000000000000000000125 /* BlogDetailView.swift */,
+				2B0000000000000000000126 /* BlogContentBlocks.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000504 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000121 /* BlogDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000505 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000507 /* UI */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000507 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000127 /* ContactView.swift */,
+				2B0000000000000000000128 /* ContactSection.swift */,
+				2B0000000000000000000129 /* ContactRow.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000509 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000050B /* UI */,
+				2B000000000000000000050C /* ViewModels */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000050B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000010F /* OnboardingView.swift */,
+				2B0000000000000000000110 /* OnboardingPageIndicator.swift */,
+				2B0000000000000000000111 /* WelcomePageView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000050C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000010E /* OnboardingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000050D /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000050F /* UI */,
+				2B0000000000000000000510 /* ViewModels */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000050F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000011D /* PortfolioView.swift */,
+				2B000000000000000000011F /* ProjectCardView.swift */,
+				2B0000000000000000000120 /* ProjectDetailView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000510 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000011C /* PortfolioViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000511 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000513 /* UI */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000513 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000118 /* ProfileView.swift */,
+				2B0000000000000000000119 /* ProfileHeaderView.swift */,
+				2B000000000000000000011A /* AboutSectionView.swift */,
+				2B000000000000000000011B /* AboutPhotoCarousel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000515 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000516 /* Models */,
+				2B0000000000000000000517 /* UI */,
+				2B0000000000000000000518 /* ViewModels */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000516 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000012A /* SearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000517 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000012C /* SearchView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000518 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000012B /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000519 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000051B /* UI */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000051B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000012D /* SettingsView.swift */,
+				2B000000000000000000012E /* SettingsRow.swift */,
+				2B000000000000000000012F /* DataDeletionView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000051D /* Shell */ = {
+			isa = PBXGroup;
+			children = (
+				2B000000000000000000051E /* Models */,
+				2B000000000000000000051F /* UI */,
+				2B0000000000000000000520 /* ViewModels */,
+			);
+			path = Shell;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000051E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000112 /* AppTab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B000000000000000000051F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000114 /* RootTabView.swift */,
+				2B0000000000000000000115 /* AppNavigation.swift */,
+				2B0000000000000000000116 /* DrawerRow.swift */,
+				2B0000000000000000000117 /* NavigationDrawer.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000520 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000113 /* RootTabViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +528,6 @@
 			);
 			mainGroup = 2A0000000000000000000030;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 2A0000000000000000000032 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A000000000000000000000F /* onboarding_01.png in Resources */,
+				2A000000000000000000002C /* Assets.xcassets in Resources */,
 				2A000000000000000000002A /* onboarding_02.png in Resources */,
 				2A000000000000000000002B /* onboarding_03.png in Resources */,
 				2A000000000000000000000D /* icon-1024.png in Resources */,
@@ -343,17 +565,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0000000000000000000201 /* PortfolioApp.swift in Sources */,
-				2B0000000000000000000202 /* AppTheme.swift in Sources */,
-				2B0000000000000000000203 /* PortfolioModels.swift in Sources */,
-				2B0000000000000000000204 /* AppColors.swift in Sources */,
-				2B0000000000000000000205 /* BundledImage.swift in Sources */,
-				2B0000000000000000000206 /* FlowLayout.swift in Sources */,
-				2B0000000000000000000207 /* HeaderPattern.swift in Sources */,
-				2B0000000000000000000208 /* Pill.swift in Sources */,
-				2B0000000000000000000209 /* RemoteImageView.swift in Sources */,
-				2B000000000000000000020A /* MailUtilities.swift in Sources */,
+				2B0000000000000000000230 /* AppEnvironment.swift in Sources */,
+				2B0000000000000000000232 /* AppSplashView.swift in Sources */,
+				2B0000000000000000000202 /* Models/AppTheme.swift in Sources */,
+				2B0000000000000000000203 /* Models/PortfolioModels.swift in Sources */,
+				2B0000000000000000000204 /* UI/Theme/AppColors.swift in Sources */,
+				2B0000000000000000000205 /* UI/Components/BundledImage.swift in Sources */,
+				2B0000000000000000000206 /* UI/Components/FlowLayout.swift in Sources */,
+				2B0000000000000000000207 /* UI/Components/HeaderPattern.swift in Sources */,
+				2B0000000000000000000208 /* UI/Components/Pill.swift in Sources */,
+				2B0000000000000000000209 /* UI/Components/RemoteImageView.swift in Sources */,
+				2B000000000000000000020A /* Utilities/MailUtilities.swift in Sources */,
 				2B000000000000000000020B /* PortfolioRepository.swift in Sources */,
 				2B000000000000000000020C /* PortfolioAPI.swift in Sources */,
+				2B0000000000000000000231 /* PortfolioService.swift in Sources */,
 				2B000000000000000000020D /* PortfolioData.swift in Sources */,
 				2B000000000000000000020E /* OnboardingViewModel.swift in Sources */,
 				2B000000000000000000020F /* OnboardingView.swift in Sources */,
@@ -371,7 +596,6 @@
 				2B000000000000000000021B /* AboutPhotoCarousel.swift in Sources */,
 				2B000000000000000000021C /* PortfolioViewModel.swift in Sources */,
 				2B000000000000000000021D /* PortfolioView.swift in Sources */,
-				2B000000000000000000021E /* PortfolioHeaderView.swift in Sources */,
 				2B000000000000000000021F /* ProjectCardView.swift in Sources */,
 				2B0000000000000000000220 /* ProjectDetailView.swift in Sources */,
 				2B0000000000000000000221 /* BlogDetailViewModel.swift in Sources */,
@@ -522,7 +746,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W4G92DKSVN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "iOS-Portfolio-App-Swift/Info.plist";
@@ -549,7 +773,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W4G92DKSVN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "iOS-Portfolio-App-Swift/Info.plist";

@@ -5,7 +5,7 @@ struct PortfolioAPI: Sendable {
     private let session: URLSession
 
     init(
-        baseURL: URL = URL(string: "https://hiretimsf.com")!,
+        baseURL: URL = PortfolioData.websiteURL,
         session: URLSession = .shared
     ) {
         self.baseURL = baseURL

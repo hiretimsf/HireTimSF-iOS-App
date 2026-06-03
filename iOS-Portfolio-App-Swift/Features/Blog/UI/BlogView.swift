@@ -1,50 +1,32 @@
 import SwiftUI
 
 struct BlogView: View {
-    @Environment(PortfolioViewModel.self) private var portfolio
+    let viewModel: PortfolioViewModel
+    let service: any PortfolioService
 
     var body: some View {
-        List {
-            Section {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Blog")
-                        .font(.largeTitle.weight(.bold))
-                    Text("Latest posts from hiretimsf.com.")
-                        .foregroundStyle(Color.secondaryText)
-                    if portfolio.isLoadingBlogPosts {
-                        ProgressView()
-                            .tint(.brandPrimary)
-                            .padding(.top, 6)
-                    }
-                    if let blogError = portfolio.blogError {
-                        Text(blogError)
-                            .font(.caption)
-                            .foregroundStyle(Color.secondaryText)
-                            .padding(10)
-                            .background(Color.headerBackground)
-                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-                .padding(.vertical, 10)
-            }
-            .listRowBackground(Color.clear)
+        GeometryReader { proxy in
+            let contentWidth = max(proxy.size.width - 36, 0)
 
-            ForEach(portfolio.blogPosts) { post in
-                NavigationLink {
-                    BlogDetailView(initialPost: post)
-                } label: {
-                    BlogPostCardView(post: post)
+            List {
+                ForEach(viewModel.blogPosts) { post in
+                    NavigationLink {
+                        BlogDetailView(initialPost: post, service: service)
+                    } label: {
+                        BlogPostCardView(post: post, contentWidth: contentWidth)
+                    }
+                    .buttonStyle(.plain)
+                    .listRowInsets(EdgeInsets(top: 8, leading: 18, bottom: 8, trailing: 18))
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                 }
-                .buttonStyle(.plain)
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
             }
-        }
-        .listStyle(.plain)
-        .scrollContentBackground(.hidden)
-        .background(Color.appBackground)
-        .refreshable {
-            await portfolio.loadBlogPosts()
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(Color.appBackground)
+            .refreshable {
+                await viewModel.loadBlogPosts()
+            }
         }
     }
 }

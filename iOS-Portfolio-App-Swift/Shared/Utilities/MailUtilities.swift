@@ -10,7 +10,10 @@ func mailURL(subject: String? = nil, body: String? = nil) -> URL {
     if let body { queryItems.append(URLQueryItem(name: "body", value: body)) }
 
     components.queryItems = queryItems.isEmpty ? nil : queryItems
-    return components.url ?? URL(string: "mailto:\(PortfolioData.profile.email)")!
+    guard let url = components.url else {
+        preconditionFailure("Invalid support email address: \(PortfolioData.profile.email)")
+    }
+    return url
 }
 
 func deletionEmailBody(id: String) -> String {

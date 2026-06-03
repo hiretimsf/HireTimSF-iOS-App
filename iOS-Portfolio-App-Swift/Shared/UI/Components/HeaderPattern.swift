@@ -22,7 +22,7 @@ struct HeaderPattern: View {
     var body: some View {
         Canvas { context, size in
             let scaled = points.map { CGPoint(x: $0.x * size.width, y: $0.y * size.height) }
-            let maxDistance = min(size.width, size.height) * 0.42
+            let maxDistance = min(size.width, size.height) * 0.34
 
             var path = Path()
             for startIndex in scaled.indices {
@@ -45,5 +45,6 @@ struct HeaderPattern: View {
                 context.fill(Path(ellipseIn: rect), with: .color(.white))
             }
         }
+        .accessibilityHidden(true)
     }
 }

@@ -17,5 +17,6 @@ struct DrawerRow: View {
                 .background(selected ? Color.selectedItemBackground : Color.clear)
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
 }

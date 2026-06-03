@@ -18,14 +18,17 @@ struct AppNavigation<Content: View>: View {
                         } label: {
                             Image(systemName: "line.3.horizontal")
                         }
+                        .accessibilityLabel("Open navigation menu")
                     }
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         Button { showingSearch = true } label: {
                             Image(systemName: "magnifyingglass")
                         }
+                        .accessibilityLabel("Search")
                         Button { showingContact = true } label: {
                             Image(systemName: "envelope")
                         }
+                        .accessibilityLabel("Contact")
                     }
                 }
         }

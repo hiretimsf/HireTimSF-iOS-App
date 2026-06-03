@@ -1,7 +1,20 @@
 import SwiftUI
 
 struct RootTabView: View {
-    @State private var viewModel = RootTabViewModel()
+    let portfolioViewModel: PortfolioViewModel
+    let appEnvironment: AppEnvironment
+
+    @State private var viewModel: RootTabViewModel
+
+    @MainActor
+    init(
+        portfolioViewModel: PortfolioViewModel,
+        appEnvironment: AppEnvironment
+    ) {
+        self.portfolioViewModel = portfolioViewModel
+        self.appEnvironment = appEnvironment
+        _viewModel = State(initialValue: RootTabViewModel())
+    }
 
     var body: some View {
         @Bindable var model = viewModel
@@ -15,13 +28,16 @@ struct RootTabView: View {
                 .tag(AppTab.profile)
 
                 AppNavigation(title: "Portfolio", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
-                    PortfolioView()
+                    PortfolioView(viewModel: portfolioViewModel)
                 }
                 .tabItem { Label("Portfolio", systemImage: "rectangle.stack") }
                 .tag(AppTab.portfolio)
 
                 AppNavigation(title: "Blog", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
-                    BlogView()
+                    BlogView(
+                        viewModel: portfolioViewModel,
+                        service: appEnvironment.portfolioService
+                    )
                 }
                 .tabItem { Label("Blog", systemImage: "text.alignleft") }
                 .tag(AppTab.blog)
@@ -35,11 +51,16 @@ struct RootTabView: View {
             .tint(.brandPrimary)
 
             if model.isShowingDrawer {
-                Color.black.opacity(0.28)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        withAnimation(.easeOut(duration: 0.2)) { model.isShowingDrawer = false }
-                    }
+                Button {
+                    withAnimation(.easeOut(duration: 0.2)) { model.isShowingDrawer = false }
+                } label: {
+                    Color.black.opacity(0.28)
+                        .ignoresSafeArea()
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close navigation menu")
+                .accessibilityHint("Dismisses the navigation drawer")
                 NavigationDrawer(
                     selectedTab: $model.selectedTab,
                     showingDrawer: $model.isShowingDrawer,
@@ -48,12 +69,19 @@ struct RootTabView: View {
                 .transition(.move(edge: .leading))
             }
         }
+        .onChange(of: model.selectedTab) {
+            if model.isShowingDrawer {
+                withAnimation(.easeOut(duration: 0.2)) { model.isShowingDrawer = false }
+            }
+        }
         .animation(.easeOut(duration: 0.22), value: model.isShowingDrawer)
         .sheet(isPresented: $model.isShowingContact) {
             NavigationStack { ContactView() }
         }
         .sheet(isPresented: $model.isShowingSearch) {
-            NavigationStack { SearchView() }
+            NavigationStack {
+                SearchView(portfolioViewModel: portfolioViewModel)
+            }
         }
     }
 }

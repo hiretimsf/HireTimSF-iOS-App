@@ -10,15 +10,15 @@ final class PortfolioViewModel {
     var projectError: String?
     var blogError: String?
 
-    private let repository: PortfolioRepository
+    private let service: any PortfolioService
     private var hasLoaded = false
 
     init(
-        repository: PortfolioRepository = RemotePortfolioRepository(),
+        service: any PortfolioService,
         projects: [Project] = PortfolioData.projects,
         blogPosts: [BlogPost] = PortfolioData.blogPosts
     ) {
-        self.repository = repository
+        self.service = service
         self.projects = projects
         self.blogPosts = blogPosts
     }
@@ -39,7 +39,7 @@ final class PortfolioViewModel {
         defer { isLoadingProjects = false }
 
         do {
-            projects = try await repository.fetchProjects()
+            projects = try await service.loadProjects()
             projectError = nil
         } catch is CancellationError {
             projectError = nil
@@ -53,7 +53,7 @@ final class PortfolioViewModel {
         defer { isLoadingBlogPosts = false }
 
         do {
-            blogPosts = try await repository.fetchBlogPosts()
+            blogPosts = try await service.loadBlogPosts()
             blogError = nil
         } catch is CancellationError {
             blogError = nil
@@ -62,7 +62,4 @@ final class PortfolioViewModel {
         }
     }
 
-    func fetchBlogPost(slug: String) async throws -> BlogPost {
-        try await repository.fetchBlogPost(slug: slug)
-    }
 }
