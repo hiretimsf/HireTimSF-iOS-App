@@ -31,9 +31,9 @@ struct SearchView: View {
         }
         .overlay {
             if viewModel.query.isEmpty {
-                ContentUnavailableView("Search", systemImage: "magnifyingglass", description: Text("Type to search projects, blog posts, and about content."))
+                SearchEmptyState(title: "Search", description: "Type to search projects, blog posts, and about content.")
             } else if results.isEmpty {
-                ContentUnavailableView("No results found.", systemImage: "magnifyingglass")
+                SearchEmptyState(title: "No results found.")
             }
         }
         .navigationTitle("Search")
@@ -41,6 +41,34 @@ struct SearchView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Close") { dismiss() }
+            }
+        }
+    }
+}
+
+private struct SearchEmptyState: View {
+    let title: String
+    var description: String?
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Image("SearchIcon")
+                .renderingMode(.original)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 36, height: 36)
+                .accessibilityHidden(true)
+
+            Text(title)
+                .font(.headline)
+                .foregroundStyle(Color.primaryText)
+
+            if let description {
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundStyle(Color.secondaryText)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 32)
             }
         }
     }

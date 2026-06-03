@@ -23,7 +23,7 @@ struct ContactView: View {
 
                 ContactSection(title: "Email") {
                     Link(destination: mailURL()) {
-                        ContactRow(icon: "envelope", title: profile.email)
+                        ContactRow(icon: "envelope", imageAsset: "EmailIcon", title: profile.email)
                     }
                 }
 

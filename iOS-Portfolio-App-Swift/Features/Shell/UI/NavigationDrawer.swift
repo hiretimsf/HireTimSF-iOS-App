@@ -31,7 +31,7 @@ struct NavigationDrawer: View {
             .frame(height: 176)
 
             ForEach(AppTab.allCases) { tab in
-                DrawerRow(title: tab.title, systemImage: tab.systemImage, selected: selectedTab == tab) {
+                DrawerRow(title: tab.title, systemImage: tab.systemImage, imageAsset: tab.imageAsset, selected: selectedTab == tab) {
                     selectedTab = tab
                     showingDrawer = false
                 }
@@ -40,7 +40,7 @@ struct NavigationDrawer: View {
             Divider()
                 .padding(.vertical, 8)
 
-            DrawerRow(title: "Contact", systemImage: "envelope", selected: false) {
+            DrawerRow(title: "Contact", systemImage: "envelope", imageAsset: "EmailIcon", selected: false) {
                 showingDrawer = false
                 showingContact = true
             }

@@ -23,4 +23,14 @@ enum AppTab: String, CaseIterable, Identifiable, Sendable {
         case .settings: "gearshape"
         }
     }
+
+    var imageAsset: String? {
+        switch self {
+        case .profile: "ProfileTabIcon"
+        case .portfolio: "PortfolioTabIcon"
+        case .blog: "BlogTabIcon"
+        case .settings: "SettingsTabIcon"
+        default: nil
+        }
+    }
 }

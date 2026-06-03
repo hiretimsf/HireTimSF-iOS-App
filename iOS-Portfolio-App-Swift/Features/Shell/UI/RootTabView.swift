@@ -24,13 +24,21 @@ struct RootTabView: View {
                 AppNavigation(title: "Profile", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
                     ProfileView()
                 }
-                .tabItem { Label("Profile", systemImage: "person.crop.circle") }
+                .tabItem {
+                    Image("ProfileTabIcon")
+                        .renderingMode(.original)
+                    Text("Profile")
+                }
                 .tag(AppTab.profile)
 
                 AppNavigation(title: "Portfolio", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
                     PortfolioView(viewModel: portfolioViewModel)
                 }
-                .tabItem { Label("Portfolio", systemImage: "rectangle.stack") }
+                .tabItem {
+                    Image("PortfolioTabIcon")
+                        .renderingMode(.original)
+                    Text("Portfolio")
+                }
                 .tag(AppTab.portfolio)
 
                 AppNavigation(title: "Blog", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
@@ -39,13 +47,21 @@ struct RootTabView: View {
                         service: appEnvironment.portfolioService
                     )
                 }
-                .tabItem { Label("Blog", systemImage: "text.alignleft") }
+                .tabItem {
+                    Image("BlogTabIcon")
+                        .renderingMode(.original)
+                    Text("Blog")
+                }
                 .tag(AppTab.blog)
 
                 AppNavigation(title: "Settings", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
                     SettingsView()
                 }
-                .tabItem { Label("Settings", systemImage: "gearshape") }
+                .tabItem {
+                    Image("SettingsTabIcon")
+                        .renderingMode(.original)
+                    Text("Settings")
+                }
                 .tag(AppTab.settings)
             }
             .tint(.brandPrimary)
