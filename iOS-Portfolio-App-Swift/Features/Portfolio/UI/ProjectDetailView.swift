@@ -33,22 +33,21 @@ struct ProjectDetailView: View {
                     .frame(width: contentWidth, alignment: .leading)
 
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Tech")
+                        Text("Tech Stacks")
                             .font(.headline)
                         FlowLayout(items: project.techStacks) { tech in
                             Pill(tech)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .frame(width: contentWidth, alignment: .leading)
 
                     VStack(spacing: 10) {
                         ForEach(project.links) { link in
                             Link(destination: link.url) {
-                                Label(link.title, systemImage: link.systemImage)
-                                    .frame(maxWidth: .infinity)
+                                CardActionLabel(title: link.title)
                             }
-                            .buttonStyle(.borderedProminent)
-                            .tint(.brandPrimary)
+                            .buttonStyle(.plain)
                         }
                     }
                     .frame(width: contentWidth)

@@ -65,15 +65,6 @@ struct BlogDetailView: View {
                         BlogContentBlocks(blocks: selectedPost.content.contentBlocks, contentWidth: contentWidth)
                     }
 
-                    if let url = selectedPost.url {
-                        Link(destination: url) {
-                            Label("Open on hiretimsf.com", systemImage: "safari")
-                                .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.brandPrimary)
-                        .frame(width: contentWidth)
-                    }
                 }
                 .frame(width: contentWidth, alignment: .leading)
                 .padding(18)

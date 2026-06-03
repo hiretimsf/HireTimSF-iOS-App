@@ -12,14 +12,21 @@ struct BlogPostCardView: View {
                 .clipped()
                 .accessibilityLabel(post.imageAlt)
 
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .center, spacing: 10) {
                     Pill(post.category)
-                    Spacer()
+                    Text(post.date)
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(Color.secondaryText)
+                    Text("|")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(Color.secondaryText.opacity(0.7))
                     Text(post.readTime)
-                        .font(.caption.weight(.semibold))
+                        .font(.caption.weight(.bold))
                         .foregroundStyle(Color.secondaryText)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
                 Text(post.title)
                     .font(.title3.weight(.bold))
                     .foregroundStyle(Color.primaryText)
@@ -28,9 +35,8 @@ struct BlogPostCardView: View {
                     .foregroundStyle(Color.secondaryText)
                     .lineLimit(3)
                     .fixedSize(horizontal: false, vertical: true)
-                Text(post.date)
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(Color.brandPrimary)
+
+                CardActionLabel(title: "Read More")
             }
             .padding(14)
             .frame(width: contentWidth, alignment: .leading)

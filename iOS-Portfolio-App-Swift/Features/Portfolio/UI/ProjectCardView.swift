@@ -15,11 +15,11 @@ struct ProjectCardView: View {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
                     Pill(project.header)
-                    Spacer()
                     Text("\(project.start) - \(project.end)")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(Color.brandPrimary)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
 
                 Text(project.subtitle)
                     .font(.title3.weight(.bold))
@@ -36,6 +36,9 @@ struct ProjectCardView: View {
                 FlowLayout(items: Array(project.techStacks.prefix(3))) { tech in
                     Pill(tech)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                CardActionLabel(title: "Learn More")
             }
             .padding(14)
             .frame(width: contentWidth, alignment: .leading)
@@ -44,5 +47,29 @@ struct ProjectCardView: View {
         .background(Color.cardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         .shadow(color: .black.opacity(0.08), radius: 8, y: 2)
+    }
+}
+
+struct CardActionLabel: View {
+    let title: String
+
+    var body: some View {
+        Text(title)
+            .font(.headline.weight(.bold))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background {
+                LinearGradient(
+                    colors: [
+                        Color(red: 0.145, green: 0.388, blue: 0.922),
+                        Color(red: 0.055, green: 0.647, blue: 0.914),
+                        Color(red: 0.024, green: 0.714, blue: 0.831)
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }

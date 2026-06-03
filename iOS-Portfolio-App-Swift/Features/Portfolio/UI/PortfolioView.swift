@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PortfolioView: View {
     let viewModel: PortfolioViewModel
+    @State private var selectedProjectID: String?
 
     var body: some View {
         GeometryReader { proxy in
@@ -9,13 +10,13 @@ struct PortfolioView: View {
 
             List {
                 ForEach(viewModel.projects) { project in
-                    NavigationLink {
-                        ProjectDetailView(project: project)
+                    Button {
+                        selectedProjectID = project.id
                     } label: {
                         ProjectCardView(project: project, contentWidth: contentWidth)
                     }
                     .buttonStyle(.plain)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 18, bottom: 8, trailing: 18))
+                    .listRowInsets(EdgeInsets(top: 12, leading: 18, bottom: 12, trailing: 18))
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
@@ -23,6 +24,11 @@ struct PortfolioView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(Color.appBackground)
+            .navigationDestination(item: $selectedProjectID) { projectID in
+                if let project = viewModel.projects.first(where: { $0.id == projectID }) {
+                    ProjectDetailView(project: project)
+                }
+            }
             .refreshable {
                 await viewModel.loadProjects()
             }

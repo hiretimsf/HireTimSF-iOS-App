@@ -3,6 +3,7 @@ import SwiftUI
 struct BlogView: View {
     let viewModel: PortfolioViewModel
     let service: any PortfolioService
+    @State private var selectedPostID: String?
 
     var body: some View {
         GeometryReader { proxy in
@@ -10,13 +11,13 @@ struct BlogView: View {
 
             List {
                 ForEach(viewModel.blogPosts) { post in
-                    NavigationLink {
-                        BlogDetailView(initialPost: post, service: service)
+                    Button {
+                        selectedPostID = post.id
                     } label: {
                         BlogPostCardView(post: post, contentWidth: contentWidth)
                     }
                     .buttonStyle(.plain)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 18, bottom: 8, trailing: 18))
+                    .listRowInsets(EdgeInsets(top: 12, leading: 18, bottom: 12, trailing: 18))
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
@@ -24,6 +25,11 @@ struct BlogView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(Color.appBackground)
+            .navigationDestination(item: $selectedPostID) { postID in
+                if let post = viewModel.blogPosts.first(where: { $0.id == postID }) {
+                    BlogDetailView(initialPost: post, service: service)
+                }
+            }
             .refreshable {
                 await viewModel.loadBlogPosts()
             }
