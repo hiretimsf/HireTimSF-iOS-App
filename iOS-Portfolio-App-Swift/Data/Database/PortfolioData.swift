@@ -120,7 +120,7 @@ enum PortfolioData {
         BlogPost(
             slug: "android-compose-notes",
             title: "Building calmer Android screens with Compose",
-            date: "May 2026",
+            date: "May 1, 2026",
             category: "Android",
             readTime: "4 min read",
             excerpt: "Placeholder notes for a future post about replacing legacy screens with focused Compose UI.",

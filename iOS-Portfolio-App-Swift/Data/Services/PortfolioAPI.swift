@@ -160,7 +160,7 @@ private struct BlogPostDTO: Decodable {
         BlogPost(
             slug: slug,
             title: title,
-            date: created,
+            date: Self.displayDate(created),
             category: category,
             readTime: readingTime,
             excerpt: excerpt ?? description,
@@ -173,6 +173,50 @@ private struct BlogPostDTO: Decodable {
             authorAvatarUrl: URL(string: authorAvatarUrl),
             tags: tags
         )
+    }
+
+    private static func displayDate(_ value: String) -> String {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return trimmed }
+
+        let isoWithFractions = ISO8601DateFormatter()
+        isoWithFractions.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = isoWithFractions.date(from: trimmed) {
+            return usDateFormatter.string(from: date)
+        }
+
+        let iso = ISO8601DateFormatter()
+        iso.formatOptions = [.withInternetDateTime]
+        if let date = iso.date(from: trimmed) {
+            return usDateFormatter.string(from: date)
+        }
+
+        let inputFormats = [
+            "yyyy-MM-dd",
+            "MM/dd/yyyy",
+            "MMM d, yyyy",
+            "MMMM d, yyyy"
+        ]
+
+        for format in inputFormats {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            formatter.dateFormat = format
+            if let date = formatter.date(from: trimmed) {
+                return usDateFormatter.string(from: date)
+            }
+        }
+
+        return value
+    }
+
+    private static var usDateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "MMM d, yyyy"
+        return formatter
     }
 }
 
