@@ -45,7 +45,7 @@ struct ProjectDetailView: View {
                     VStack(spacing: 10) {
                         ForEach(project.links) { link in
                             Link(destination: link.url) {
-                                CardActionLabel(title: link.title)
+                                PrimaryActionLabel(title: link.title)
                             }
                             .buttonStyle(.plain)
                         }

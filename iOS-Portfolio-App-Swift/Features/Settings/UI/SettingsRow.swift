@@ -15,8 +15,13 @@ struct SettingsRow: View {
                     .foregroundStyle(Color.secondaryText)
             }
         } icon: {
-            Image(systemName: icon)
-                .foregroundStyle(Color.brandPrimary)
+            ZStack {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .fill(Color.brandPrimary.opacity(0.12))
+                    .frame(width: 34, height: 34)
+                Image(systemName: icon)
+                    .foregroundStyle(Color.brandPrimary)
+            }
         }
     }
 }

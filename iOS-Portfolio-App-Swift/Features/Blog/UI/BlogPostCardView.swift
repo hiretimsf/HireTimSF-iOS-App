@@ -36,7 +36,7 @@ struct BlogPostCardView: View {
                     .lineLimit(3)
                     .fixedSize(horizontal: false, vertical: true)
 
-                CardActionLabel(title: "Read More")
+                PrimaryActionLabel(title: "Read More")
             }
             .padding(14)
             .frame(width: contentWidth, alignment: .leading)

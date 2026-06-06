@@ -27,6 +27,11 @@ struct AboutPhoto: Identifiable, Sendable {
     let alt: String
 }
 
+struct AboutContent: Sendable {
+    let sections: [AboutSection]
+    let photos: [AboutPhoto]
+}
+
 struct Project: Identifiable, Sendable {
     let id: String
     let title: String
@@ -52,7 +57,6 @@ struct ProjectLink: Identifiable, Sendable {
     let id = UUID()
     let title: String
     let url: URL
-    let systemImage: String
 }
 
 struct BlogPost: Identifiable, Sendable {

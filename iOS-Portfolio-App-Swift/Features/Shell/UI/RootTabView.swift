@@ -22,11 +22,10 @@ struct RootTabView: View {
         ZStack(alignment: .leading) {
             TabView(selection: $model.selectedTab) {
                 AppNavigation(title: "Profile", showingDrawer: $model.isShowingDrawer, showingContact: $model.isShowingContact, showingSearch: $model.isShowingSearch) {
-                    ProfileView()
+                    ProfileView(service: appEnvironment.portfolioService)
                 }
                 .tabItem {
-                    Image("ProfileTabIcon")
-                        .renderingMode(.original)
+                    Image(systemName: AppTab.profile.systemImage)
                     Text("Profile")
                 }
                 .tag(AppTab.profile)
@@ -35,8 +34,7 @@ struct RootTabView: View {
                     PortfolioView(viewModel: portfolioViewModel)
                 }
                 .tabItem {
-                    Image("PortfolioTabIcon")
-                        .renderingMode(.original)
+                    Image(systemName: AppTab.portfolio.systemImage)
                     Text("Portfolio")
                 }
                 .tag(AppTab.portfolio)
@@ -48,8 +46,7 @@ struct RootTabView: View {
                     )
                 }
                 .tabItem {
-                    Image("BlogTabIcon")
-                        .renderingMode(.original)
+                    Image(systemName: AppTab.blog.systemImage)
                     Text("Blog")
                 }
                 .tag(AppTab.blog)
@@ -58,8 +55,7 @@ struct RootTabView: View {
                     SettingsView()
                 }
                 .tabItem {
-                    Image("SettingsTabIcon")
-                        .renderingMode(.original)
+                    Image(systemName: AppTab.settings.systemImage)
                     Text("Settings")
                 }
                 .tag(AppTab.settings)

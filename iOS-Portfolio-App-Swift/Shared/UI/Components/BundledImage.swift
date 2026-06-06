@@ -9,11 +9,6 @@ struct BundledImage: View {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
-        } else if let path = Bundle.main.path(forResource: name, ofType: "png"),
-                  let image = UIImage(contentsOfFile: path) {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
         } else {
             Color.logoGreyLight
         }

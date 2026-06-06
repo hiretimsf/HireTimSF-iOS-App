@@ -1,11 +1,17 @@
 import SwiftUI
 
 struct AboutPhotoCarousel: View {
+    let photos: [AboutPhoto]
+
     @State private var selected = 0
+
+    init(photos: [AboutPhoto] = PortfolioData.aboutPhotos) {
+        self.photos = photos
+    }
 
     var body: some View {
         TabView(selection: $selected) {
-            ForEach(Array(PortfolioData.aboutPhotos.enumerated()), id: \.element.id) { index, photo in
+            ForEach(Array(photos.enumerated()), id: \.element.id) { index, photo in
                 RemoteImageView(url: photo.url)
                     .scaledToFill()
                     .frame(height: 330)

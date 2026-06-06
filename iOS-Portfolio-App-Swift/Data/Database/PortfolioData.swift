@@ -21,19 +21,19 @@ enum PortfolioData {
             title: "Hello",
             subtitle: "I'm Tim,",
             text: "I am a Design Engineer based in the San Francisco Bay Area.",
-            imageName: "onboarding_01"
+            imageName: "Onboarding01"
         ),
         WelcomePage(
             title: "Background",
             subtitle: "Modern web apps,",
             text: "I build web and Android apps using Next.js, React, TypeScript, Tailwind CSS, Kotlin, and Jetpack Compose.",
-            imageName: "onboarding_02"
+            imageName: "Onboarding02"
         ),
         WelcomePage(
             title: "Passion",
             subtitle: "My portfolio",
             text: "I built this app to share my work.",
-            imageName: "onboarding_03"
+            imageName: "Onboarding03"
         )
     ]
 
@@ -62,6 +62,8 @@ enum PortfolioData {
         AboutPhoto(url: url("https://hiretimsf.com/images/about/about_me_03.webp"), alt: "Tim running, showing his active lifestyle and fitness")
     ]
 
+    static let aboutContent = AboutContent(sections: aboutSections, photos: aboutPhotos)
+
     static let projects = [
         Project(
             id: "YvlbIeO4gwikTqhO3bF8",
@@ -76,8 +78,8 @@ enum PortfolioData {
             start: "Nov 2018",
             end: "Aug 2019",
             links: [
-                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Portfolio-Verson-2/"), systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/details?id=hiretimsf.com.app"), systemImage: "arrow.up.forward.app")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Portfolio-Verson-2/")),
+                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/details?id=hiretimsf.com.app"))
             ]
         ),
         Project(
@@ -93,8 +95,8 @@ enum PortfolioData {
             start: "Nov 2018",
             end: "Aug 2019",
             links: [
-                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Mongolian-Sign-Language-Dictionary"), systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/dev?id=4872099625526337244"), systemImage: "arrow.up.forward.app")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Mongolian-Sign-Language-Dictionary")),
+                ProjectLink(title: "Play Store", url: url("https://play.google.com/store/apps/dev?id=4872099625526337244"))
             ]
         ),
         Project(
@@ -110,8 +112,8 @@ enum PortfolioData {
             start: "May 2018",
             end: "Feb 2019",
             links: [
-                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Personal-Resume-Android"), systemImage: "chevron.left.forwardslash.chevron.right"),
-                ProjectLink(title: "Download", url: url("https://drive.google.com/file/d/1k42IA8ypeBl-idalp9RRwxPzz3UugQCw/view"), systemImage: "square.and.arrow.down")
+                ProjectLink(title: "GitHub", url: url("https://github.com/tumurb/Personal-Resume-Android")),
+                ProjectLink(title: "Download", url: url("https://drive.google.com/file/d/1k42IA8ypeBl-idalp9RRwxPzz3UugQCw/view"))
             ]
         )
     ]
@@ -136,9 +138,7 @@ enum PortfolioData {
     ]
 
     static let appInfo = [
-        AppInfoItem(title: "Current Version", text: "1.5.2"),
-        AppInfoItem(title: "Latest Version", text: "1.5.2"),
-        AppInfoItem(title: "Last updated", text: "June 23, 2019")
+        AppInfoItem(title: "Current Version", text: "1.5.2")
     ]
 
     static let sourceCodeURL = url("https://github.com/hiretimsf")

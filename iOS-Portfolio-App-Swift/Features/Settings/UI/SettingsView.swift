@@ -1,3 +1,6 @@
+#if DEBUG
+import FirebaseAnalytics
+#endif
 import SwiftUI
 
 struct SettingsView: View {
@@ -49,6 +52,18 @@ struct SettingsView: View {
                     SettingsRow(icon: "rectangle.on.rectangle", title: "Show Onboarding", subtitle: "Replay the welcome screens")
                 }
             }
+
+            #if DEBUG
+            Section("Firebase Debug") {
+                Button {
+                    Analytics.logEvent("debug_settings_test_event", parameters: [
+                        "source": "settings"
+                    ])
+                } label: {
+                    SettingsRow(icon: "chart.bar", title: "Send Analytics Event", subtitle: "debug_settings_test_event")
+                }
+            }
+            #endif
         }
         .scrollContentBackground(.hidden)
         .background(Color.appBackground)

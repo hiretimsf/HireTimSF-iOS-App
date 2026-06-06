@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContactRow: View {
     let icon: String
-    var imageAsset: String?
     let title: String
 
     var body: some View {
@@ -12,15 +11,8 @@ struct ContactRow: View {
                     .fill(Color.appBackground)
                     .frame(width: 38, height: 38)
 
-                if let imageAsset {
-                    Image(imageAsset)
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
-                } else {
-                    Image(systemName: icon)
-                }
+                Image(systemName: icon)
+                    .foregroundStyle(Color.brandPrimary)
             }
             Text(title)
                 .font(.body.weight(.semibold))

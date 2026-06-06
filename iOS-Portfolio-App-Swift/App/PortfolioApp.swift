@@ -1,3 +1,7 @@
+import FirebaseCore
+#if DEBUG
+import FirebaseAnalytics
+#endif
 import SwiftUI
 
 @main
@@ -15,8 +19,28 @@ struct HireTimSFPortfolioApp: App {
 
     @MainActor
     init(appEnvironment: AppEnvironment) {
+        Self.configureFirebaseIfAvailable()
         self.appEnvironment = appEnvironment
         _portfolioViewModel = State(initialValue: PortfolioViewModel(service: appEnvironment.portfolioService))
+    }
+
+    private static func configureFirebaseIfAvailable() {
+        guard FirebaseApp.app() == nil else { return }
+
+        guard Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else {
+            #if DEBUG
+            print("GoogleService-Info.plist not found; Firebase is not configured.")
+            #endif
+            return
+        }
+
+        FirebaseApp.configure()
+
+        #if DEBUG
+        Analytics.logEvent("debug_app_launch", parameters: [
+            "source": "app_init"
+        ])
+        #endif
     }
 
     var body: some Scene {

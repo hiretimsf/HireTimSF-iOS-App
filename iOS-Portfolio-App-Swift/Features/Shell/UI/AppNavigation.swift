@@ -22,19 +22,11 @@ struct AppNavigation<Content: View>: View {
                     }
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         Button { showingSearch = true } label: {
-                            Image("SearchIcon")
-                                .renderingMode(.original)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 24, height: 24)
+                            Image(systemName: "magnifyingglass")
                         }
                         .accessibilityLabel("Search")
                         Button { showingContact = true } label: {
-                            Image("EmailIcon")
-                                .renderingMode(.original)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 24, height: 24)
+                            Image(systemName: "envelope")
                         }
                         .accessibilityLabel("Contact")
                     }

@@ -14,8 +14,7 @@ This is a SwiftUI conversion of the Kotlin/Jetpack Compose Android portfolio app
 - First-launch onboarding converted from the Android welcome pages
 - SwiftUI vector animations inspired by the Android onboarding animated vector drawables
 - iOS side navigation drawer with profile, portfolio, blog, settings, and contact actions
-- iOS app icon PNGs generated from the Android Play Store icon and registered in `Info.plist`
-- Android `profile.webp` converted to bundled iOS PNG scale variants
+- iOS app icon, launch logo, profile image, and onboarding images managed through `Assets.xcassets`
 - Android profile header vector background converted to a SwiftUI constellation canvas
 - Android light/dark accent and profile header colors mapped into SwiftUI dynamic colors
 
@@ -31,4 +30,4 @@ Command-line build used for validation:
 xcodebuild -project iOS-Portfolio-App-Swift.xcodeproj -target iOS-Portfolio-App-Swift -configuration Debug -sdk iphoneos26.5 CODE_SIGNING_ALLOWED=NO build
 ```
 
-The `Assets.xcassets` folder contains generated icons copied from the Android Play Store icon. The profile image is also bundled directly as `profile.png` so the project can build on local Xcode installs where asset catalog thinning is blocked by a simulator runtime mismatch.
+The `Assets.xcassets` folder is the single source for bundled images. Loose duplicate PNG resources were removed so Xcode only copies the compiled asset catalog.

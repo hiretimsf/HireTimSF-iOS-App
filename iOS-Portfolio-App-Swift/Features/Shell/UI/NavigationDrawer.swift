@@ -1,5 +1,4 @@
 import SwiftUI
-import UIKit
 
 struct NavigationDrawer: View {
     @Binding var selectedTab: AppTab
@@ -13,7 +12,7 @@ struct NavigationDrawer: View {
                 HeaderPattern()
                     .opacity(0.14)
                 HStack(spacing: 14) {
-                    BundledImage(name: "profile")
+                    BundledImage(name: "Profile")
                         .frame(width: 62, height: 62)
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.onChrome.opacity(0.9), lineWidth: 1))
@@ -31,7 +30,7 @@ struct NavigationDrawer: View {
             .frame(height: 176)
 
             ForEach(AppTab.allCases) { tab in
-                DrawerRow(title: tab.title, systemImage: tab.systemImage, imageAsset: tab.imageAsset, selected: selectedTab == tab) {
+                DrawerRow(title: tab.title, systemImage: tab.systemImage, selected: selectedTab == tab) {
                     selectedTab = tab
                     showingDrawer = false
                 }
@@ -40,14 +39,14 @@ struct NavigationDrawer: View {
             Divider()
                 .padding(.vertical, 8)
 
-            DrawerRow(title: "Contact", systemImage: "envelope", imageAsset: "EmailIcon", selected: false) {
+            DrawerRow(title: "Contact", systemImage: "envelope", selected: false) {
                 showingDrawer = false
                 showingContact = true
             }
 
             Spacer()
         }
-        .frame(width: min(320, UIScreen.main.bounds.width * 0.82))
+        .frame(width: 320)
         .background(Color.cardBackground)
         .ignoresSafeArea()
         .shadow(color: .black.opacity(0.22), radius: 18, x: 4)

@@ -28,10 +28,6 @@ struct AppSplashView: View {
 
     private static var logoImage: UIImage? {
         UIImage(named: "LaunchLogo")
-            ?? UIImage(named: "icon-1024")
-            ?? UIImage(named: "icon-1024.png")
-            ?? UIImage(named: "icon-60")
-            ?? UIImage(named: "icon-60@3x.png")
     }
 }
 

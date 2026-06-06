@@ -6,18 +6,49 @@ struct ProjectCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RemoteImageView(url: project.coverImage)
-                .scaledToFill()
-                .frame(width: contentWidth, height: 178)
-                .clipped()
-                .accessibilityLabel(project.imageDescription)
+            ZStack(alignment: .bottomLeading) {
+                RemoteImageView(url: project.coverImage)
+                    .scaledToFill()
+                    .frame(width: contentWidth, height: 188)
+                    .clipped()
+                    .accessibilityLabel(project.imageDescription)
+
+                LinearGradient(
+                    colors: [.clear, .black.opacity(0.55)],
+                    startPoint: .center,
+                    endPoint: .bottom
+                )
+
+                HStack(alignment: .bottom, spacing: 12) {
+                    if let logo = project.logo {
+                        RemoteImageView(url: logo)
+                            .scaledToFit()
+                            .frame(width: 46, height: 46)
+                            .padding(6)
+                            .background(.regularMaterial)
+                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(project.header)
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.white.opacity(0.86))
+                        Text(project.title)
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(.white)
+                            .lineLimit(2)
+                    }
+                }
+                .padding(14)
+            }
+            .frame(width: contentWidth, height: 188)
 
             VStack(alignment: .leading, spacing: 12) {
-                HStack {
+                HStack(spacing: 8) {
                     Pill(project.header)
                     Text("\(project.start) - \(project.end)")
                         .font(.caption.weight(.bold))
-                        .foregroundStyle(Color.brandPrimary)
+                        .foregroundStyle(Color.secondaryText)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -38,7 +69,7 @@ struct ProjectCardView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-                CardActionLabel(title: "Learn More")
+                PrimaryActionLabel(title: "Learn More")
             }
             .padding(14)
             .frame(width: contentWidth, alignment: .leading)
@@ -47,29 +78,5 @@ struct ProjectCardView: View {
         .background(Color.cardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         .shadow(color: .black.opacity(0.08), radius: 8, y: 2)
-    }
-}
-
-struct CardActionLabel: View {
-    let title: String
-
-    var body: some View {
-        Text(title)
-            .font(.headline.weight(.bold))
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 14)
-            .background {
-                LinearGradient(
-                    colors: [
-                        Color(red: 0.145, green: 0.388, blue: 0.922),
-                        Color(red: 0.055, green: 0.647, blue: 0.914),
-                        Color(red: 0.024, green: 0.714, blue: 0.831)
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }

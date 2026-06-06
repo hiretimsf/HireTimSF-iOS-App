@@ -22,13 +22,18 @@ struct SearchView: View {
         List(results) { result in
             VStack(alignment: .leading, spacing: 4) {
                 Text(result.title)
-                    .font(.headline)
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(Color.primaryText)
                 Text(result.subtitle)
                     .font(.subheadline)
                     .foregroundStyle(Color.secondaryText)
+                    .lineLimit(2)
             }
-            .padding(.vertical, 4)
+            .padding(.vertical, 8)
+            .listRowBackground(Color.cardBackground)
         }
+        .scrollContentBackground(.hidden)
+        .background(Color.appBackground)
         .overlay {
             if viewModel.query.isEmpty {
                 SearchEmptyState(title: "Search", description: "Type to search projects, blog posts, and about content.")
@@ -52,11 +57,9 @@ private struct SearchEmptyState: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            Image("SearchIcon")
-                .renderingMode(.original)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 36, height: 36)
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 34, weight: .semibold))
+                .foregroundStyle(Color.brandPrimary)
                 .accessibilityHidden(true)
 
             Text(title)

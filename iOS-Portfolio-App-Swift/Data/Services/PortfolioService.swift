@@ -2,6 +2,7 @@ protocol PortfolioService: Sendable {
     func loadProjects() async throws -> [Project]
     func loadBlogPosts() async throws -> [BlogPost]
     func loadBlogPost(slug: String) async throws -> BlogPost
+    func loadAboutContent() async throws -> AboutContent
 }
 
 struct LivePortfolioService: PortfolioService {
@@ -21,5 +22,9 @@ struct LivePortfolioService: PortfolioService {
 
     func loadBlogPost(slug: String) async throws -> BlogPost {
         try await repository.fetchBlogPost(slug: slug)
+    }
+
+    func loadAboutContent() async throws -> AboutContent {
+        try await repository.fetchAboutContent()
     }
 }

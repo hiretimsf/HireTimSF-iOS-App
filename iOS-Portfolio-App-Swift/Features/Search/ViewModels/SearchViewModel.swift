@@ -20,7 +20,7 @@ final class SearchViewModel {
         }
 
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmedQuery.isEmpty else { return allResults }
+        guard !trimmedQuery.isEmpty else { return [] }
 
         return allResults.filter { result in
             result.title.localizedCaseInsensitiveContains(trimmedQuery)

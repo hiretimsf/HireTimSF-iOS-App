@@ -31,6 +31,11 @@ struct PortfolioAPI: Sendable {
         return response.data.blogPost
     }
 
+    func fetchAboutContent() async throws -> AboutContent {
+        let response: AboutResponseDTO = try await get(path: "/api/about")
+        return response.data.aboutContent
+    }
+
     private func get<T: Decodable>(path: String) async throws -> T {
         let url = baseURL.appending(path: path)
         var request = URLRequest(url: url)
@@ -87,9 +92,9 @@ private struct ProjectDTO: Decodable {
     var project: Project {
         let projectId = slug.isEmpty ? "project-\(id)" : slug
         let links = [
-            websiteUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "Live Demo", url: $0, systemImage: "safari") },
-            githubUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "GitHub", url: $0, systemImage: "chevron.left.forwardslash.chevron.right") },
-            portfolioUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "Portfolio", url: $0, systemImage: "rectangle.stack") }
+            websiteUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "Live Demo", url: $0) },
+            githubUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "GitHub", url: $0) },
+            portfolioUrl.flatMap { URL(string: $0) }.map { ProjectLink(title: "Portfolio", url: $0) }
         ].compactMap { $0 }
 
         return Project(
@@ -157,7 +162,9 @@ private struct BlogPostDTO: Decodable {
     let sections: [BlogPostSectionDTO]?
 
     var blogPost: BlogPost {
-        BlogPost(
+        let resolvedContent = content?.withAndroidPortfolioScreenshotsFallback(for: slug) ?? ""
+
+        return BlogPost(
             slug: slug,
             title: title,
             date: Self.displayDate(created),
@@ -168,7 +175,7 @@ private struct BlogPostDTO: Decodable {
             imageAlt: imageAlt,
             url: URL(string: url),
             sections: (sections ?? []).map { BlogPostSection(title: $0.title, content: $0.content) },
-            content: content ?? "",
+            content: resolvedContent,
             author: author,
             authorAvatarUrl: URL(string: authorAvatarUrl),
             tags: tags
@@ -220,7 +227,84 @@ private struct BlogPostDTO: Decodable {
     }
 }
 
+private extension String {
+    func withAndroidPortfolioScreenshotsFallback(for slug: String) -> String {
+        guard slug == "rebuilding-android-portfolio-app-jetpack-compose" else { return self }
+        guard !contains("/images/blog/android-compose-portfolio-app/old-app-screen-01.webp") else { return self }
+
+        let oldScreenshots = (1...9).map {
+            markdownImage(
+                path: "/images/blog/android-compose-portfolio-app/old-app-screen-\(String(format: "%02d", $0)).webp",
+                alt: "Original Android portfolio app screenshot \($0)"
+            )
+        }.joined(separator: "\n")
+
+        let newScreenshots = (1...8).map {
+            markdownImage(
+                path: "/images/blog/android-compose-portfolio-app/app-screen-\(String(format: "%02d", $0)).webp",
+                alt: "New Android portfolio app screenshot \($0)"
+            )
+        }.joined(separator: "\n")
+
+        var resolved = "\(oldScreenshots)\n\n\(self)"
+        if let insertionPoint = resolved.range(of: "## The new Android stack") {
+            resolved.insert(contentsOf: "\n\n\(newScreenshots)\n\n", at: insertionPoint.lowerBound)
+        } else {
+            resolved.append("\n\n\(newScreenshots)")
+        }
+
+        return resolved
+    }
+
+    func markdownImage(path: String, alt: String) -> String {
+        "![\(alt)](\(path))"
+    }
+}
+
 private struct BlogPostSectionDTO: Decodable {
     let title: String
     let content: String
+}
+
+private struct AboutResponseDTO: Decodable {
+    let data: AboutDTO
+}
+
+private struct AboutDTO: Decodable {
+    let sections: [AboutSectionDTO]
+    let photos: [AboutPhotoDTO]
+
+    var aboutContent: AboutContent {
+        AboutContent(
+            sections: sections.map { AboutSection(title: $0.title, content: $0.content) },
+            photos: photos.compactMap(\.aboutPhoto)
+        )
+    }
+}
+
+private struct AboutSectionDTO: Decodable {
+    let title: String
+    let content: String
+}
+
+private struct AboutPhotoDTO: Decodable {
+    let src: String?
+    let alt: String
+    let url: String?
+
+    var aboutPhoto: AboutPhoto? {
+        guard let resolvedURL = Self.resolvedURL(from: url ?? src) else { return nil }
+        return AboutPhoto(url: resolvedURL, alt: alt)
+    }
+
+    private static func resolvedURL(from value: String?) -> URL? {
+        guard let value, !value.isEmpty else { return nil }
+        if let url = URL(string: value), url.scheme != nil {
+            return url
+        }
+        if value.hasPrefix("/") {
+            return URL(string: "https://hiretimsf.com\(value)")
+        }
+        return URL(string: "https://hiretimsf.com/\(value)")
+    }
 }

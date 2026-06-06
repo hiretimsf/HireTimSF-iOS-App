@@ -7,7 +7,7 @@ struct ContactView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                BundledImage(name: "profile")
+                BundledImage(name: "Profile")
                     .frame(width: 132, height: 132)
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.brandPrimary, lineWidth: 2))
@@ -21,9 +21,14 @@ struct ContactView: View {
                         .foregroundStyle(Color.secondaryText)
                 }
 
-                ContactSection(title: "Email") {
+                ContactSection(title: "Contact") {
                     Link(destination: mailURL()) {
-                        ContactRow(icon: "envelope", imageAsset: "EmailIcon", title: profile.email)
+                        ContactRow(icon: "envelope", title: profile.email)
+                    }
+                    Divider()
+                        .padding(.leading, 64)
+                    Link(destination: PortfolioData.websiteURL) {
+                        ContactRow(icon: "safari", title: PortfolioData.websiteURL.host() ?? "hiretimsf.com")
                     }
                 }
 
