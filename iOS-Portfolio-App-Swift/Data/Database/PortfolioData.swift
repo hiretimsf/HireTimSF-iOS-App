@@ -25,7 +25,7 @@ enum PortfolioData {
         ),
         WelcomePage(
             title: "Background",
-            subtitle: "Modern web apps,",
+            subtitle: "Web and Mobile apps,",
             text: "I build web, Android, and iOS apps with Next.js, Kotlin, and Swift.",
             imageName: "Onboarding02"
         ),
