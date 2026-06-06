@@ -23,6 +23,9 @@ struct DataDeletionView: View {
                 Link(destination: mailURL(subject: "HireTimSF app data deletion request", body: deletionEmailBody(id: deletionIdentifier))) {
                     Label("Email deletion request", systemImage: "envelope")
                 }
+                Link(destination: PortfolioData.dataDeletionURL) {
+                    Label("Data deletion instructions", systemImage: "safari")
+                }
             }
         }
         .navigationTitle("Data Deletion")
